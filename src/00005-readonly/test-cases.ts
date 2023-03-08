@@ -1,18 +1,15 @@
 import type { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
-  Expect<Equal<'title', GetReadonlyKeys<Todo1>>>,
-  Expect<Equal<'title' | 'description', GetReadonlyKeys<Todo2>>>,
+  Expect<Equal<MyReadonly<Todo1>, Readonly<Todo1>>>,
 ]
 
 interface Todo1 {
-  readonly title: string
+  title: string
   description: string
   completed: boolean
+  meta: {
+    author: string
+  }
 }
 
-interface Todo2 {
-  readonly title: string
-  readonly description: string
-  completed?: boolean
-}

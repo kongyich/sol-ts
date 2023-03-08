@@ -1,3 +1,3 @@
-type GetReadonlyKeys<T> = {
+type MyReadonly<T> = {
   readonly [K in keyof T]: T[K]
 }
